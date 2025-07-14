@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_shopify_connector_root" name="Shopify Connector" />
+        <menuitem id="menu_shopify_products_main" name="Shopify Products" parent="menu_shopify_connector_root" action="action_shopify_products" sequence="10"/>
+        <menuitem id="menu_shopify_customers_main" name="Shopify Customers" parent="menu_shopify_connector_root" action="action_shopify_customers" sequence="20"/>
+        <menuitem id="menu_shopify_orders_main" name="Shopify Orders" parent="menu_shopify_connector_root" action="action_shopify_orders" sequence="30"/>
+        <menuitem id="menu_shopify_settings" name="Settings" parent="menu_shopify_connector_root" action="action_shopify_settings" sequence="40"/>
+    </data>
+</odoo>

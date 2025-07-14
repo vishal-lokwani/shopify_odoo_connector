@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_shopify_order_tree" model="ir.ui.view">
+            <field name="name">shopify.order.tree</field>
+            <field name="model">shopify.order</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="customer_name"/>
+                    <field name="email"/>
+                    <field name="total_price"/>
+                    <field name="currency"/>
+                    <field name="financial_status"/>
+                    <field name="fulfillment_status"/>
+                    <field name="order_date"/>
+                </list>
+            </field>
+        </record>
+        <record id="view_shopify_order_form" model="ir.ui.view">
+            <field name="name">shopify.order.form</field>
+            <field name="model">shopify.order</field>
+            <field name="arch" type="xml">
+                <form string="Shopify Order">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="shopify_order_id"/>
+                                <field name="customer_name"/>
+                                <field name="email"/>
+                                <field name="tags"/>
+                                <field name="order_date"/>
+                                <field name="processed_at"/>
+                            </group>
+                            <group>
+                                <field name="subtotal_price"/>
+                                <field name="shipping_price"/>
+                                <field name="total_discount"/>
+                                <field name="total_price"/>
+                                <field name="currency"/>
+                                <field name="financial_status"/>
+                                <field name="fulfillment_status"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Line Items">
+                                <field name="order_lines">
+                                    <list editable="bottom">
+                                        <field name="title"/>
+                                        <field name="variant_title"/>
+                                        <field name="quantity"/>
+                                        <field name="price"/>
+                                        <field name="vendor"/>
+                                        <field name="taxable"/>
+                                        <field name="requires_shipping"/>
+                                        <field name="total_discount"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Shipping Address">
+                                <group string="Shipping Contact">
+                                    <field name="shipping_name"/>
+                                    <field name="shipping_phone"/>
+                                    <field name="shipping_company"/>
+                                </group>
+                                <group string="Shipping Location">
+                                    <field name="shipping_address1"/>
+                                    <field name="shipping_address2"/>
+                                    <field name="shipping_city"/>
+                                    <field name="shipping_province"/>
+                                    <field name="shipping_zip"/>
+                                    <field name="shipping_country"/>
+                                </group>
+                                <group string="Carrier Details">
+                                    <field name="shipping_tracking_number"/>
+                                    <field name="shipping_carrier"/>
+                                </group>
+                            </page>
+                            <page string="Billing Address">
+                                <group string="Billing Contact">
+                                    <field name="billing_name"/>
+                                    <field name="billing_phone"/>
+                                    <field name="billing_company"/>
+                                </group>
+                                <group string="Billing Location">
+                                    <field name="billing_address1"/>
+                                    <field name="billing_address2"/>
+                                    <field name="billing_city"/>
+                                    <field name="billing_province"/>
+                                    <field name="billing_zip"/>
+                                    <field name="billing_country"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_shopify_order_search" model="ir.ui.view">
+            <field name="name">shopify.order.search</field>
+            <field name="model">shopify.order</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="customer_name"/>
+                    <field name="email"/>
+                    <field name="financial_status"/>
+                    <field name="fulfillment_status"/>
+                    <field name="order_date"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_shopify_orders" model="ir.actions.act_window">
+            <field name="name">Shopify Orders</field>
+            <field name="res_model">shopify.order</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_shopify_order_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Shopify Orders yet. Click "Sync Orders" in the settings to import.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
