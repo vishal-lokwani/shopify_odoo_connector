@@ -7,7 +7,8 @@
     "website": "https://www.vidhema.com",
     "depends": ["base", "sale_management", "stock", "account","delivery"],
     'images': ['static/description/icon.gif'],
-    "price": "$450.00",
+    "price": "450.00",
+     "currency":"USD",
     "data": [
         'security/ir.model.access.csv',
         'views/config_settings_view.xml',
