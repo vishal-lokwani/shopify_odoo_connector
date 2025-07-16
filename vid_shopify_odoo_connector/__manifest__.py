@@ -7,6 +7,7 @@
     "website": "https://www.vidhema.com",
     "depends": ["base", "sale_management", "stock", "account","delivery"],
     'images': ['static/description/icon.gif'],
+    "price": "$450.00",
     "data": [
         'security/ir.model.access.csv',
         'views/config_settings_view.xml',
@@ -17,7 +18,7 @@
     ],
     "assets": {
         'web.assets_backend': [
-        'shopify_odoo_connector/static/src/img/logo.png',  # optional for preloading
+        'shopify_odoo_connector/static/src/img/logo.gif',  # optional for preloading
     ],
     },
     "installable": True,
